@@ -5,19 +5,22 @@ public class MyClass
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("temperature: " + TempConvert(25,"f"));
-        //  Console.WriteLine("Enter a temperature and its unit");
-        //  string amount =  Console.ReadLine();
-    
-//         if (amount.IndexOf("f")!= -1){
-//           int tempAmount = (int)(amount.substring(amount.IndexOf("f")));
-//           string tempType = amount.substring((amount.IndexOf("f")) to (amount.Length));
-//           Console.WriteLine("temperature: " + TempConvert(tempAmount,tempType));
-
-//   }
-
-      //
-    
+      
+     Console.WriteLine("Enter a temperature and its unit");
+         string amount =  Console.ReadLine();
+         // check the type of temperature unit
+        if (amount.IndexOf("f")!= -1)
+         {
+            string temperatureAmount = amount.Substring(0,amount.IndexOf("f"));
+            Console.WriteLine("temperature: " + TempConvert(int.Parse(temperatureAmount),"f"));
+         }
+         else {
+               if (amount.IndexOf("c")!= -1)
+         {
+            string temperatureAmount = amount.Substring(0,amount.IndexOf("c"));
+            Console.WriteLine("temperature: " + TempConvert(int.Parse(temperatureAmount),"c"));
+         }
+         }
 
     }
 
@@ -30,7 +33,7 @@ public class MyClass
                    temperature = ((amount-32) * (0.5556));
                     result = temperature + " c";
                 }
-                else   // want to convert to F = (amount* 1.8) + 32
+                else // want to convert to F = (amount* 1.8) + 32
                 if (measurementUnit == "c")
                 {
                    temperature = ((amount* 1.8) + 32);
