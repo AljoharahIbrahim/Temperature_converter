@@ -19,19 +19,22 @@ while (true)
         if (temp.Length != 2)
         {
          Console.WriteLine(" invalid length ");
+         continue;
         }
-        // 2. check the temp unit 
-        if (temp[1] != "f" || temp[1] != "c" )
-        {
-         Console.WriteLine(" invalid temperature unit ");
-
-        }
-        //3. check the temp amount 
+          //2. check the temp amount 
          if (!int.TryParse(temp[0], out int num))
         {
          Console.WriteLine(" invalid temperature amount ");
-
+         continue;
         }
+        // 3. check the temp unit 
+        if ((temp[1]!= "f") && (temp[1]!="c") )
+        {
+         Console.WriteLine(" invalid temperature unit ");
+        continue;
+        }
+      
+        
 
         try {
        //  if (calculate)
