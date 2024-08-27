@@ -5,25 +5,13 @@ public class MyClass
 {
     public static void Main(string[] args)
     {
-      
-        //  string amount =  Console.ReadLine();
-         // check the type of temperature unit
-        // if (amount.IndexOf("f")!= -1)
-        //  {
-        //     string temperatureAmount = amount.Substring(0,amount.IndexOf("f"));
-        //     Console.WriteLine("temperature: " + TempConvert(int.Parse(temperatureAmount),"f"));
-        //  }
-        //  else {
-        //        if (amount.IndexOf("c")!= -1)
-        //  {
-        //     string temperatureAmount = amount.Substring(0,amount.IndexOf("c"));
-        //     Console.WriteLine("temperature: " + TempConvert(int.Parse(temperatureAmount),"c"));
-        //  }
-        //  }
-//----------------------------------------//
-         //
-         Console.WriteLine("Enter a temperature and its unit");
+ 
+while (true)
+{
+         Console.WriteLine("Enter a temperature and its unit, or type 'Quit' to exit:");
           string amount =  Console.ReadLine(); // "45 F"
+          if (amount == "Quit" || amount == "quit" )
+          break;
           string[] temp= amount.Split(' '); // ["45", "F"]
  
         // handling 
@@ -46,7 +34,7 @@ public class MyClass
         }
 
         try {
- //  if (calculate)
+       //  if (calculate)
         Console.WriteLine("temperature: " + TempConvert(int.Parse(temp[0]),temp[1]));
         }
          catch (System.Exception ex)
@@ -56,6 +44,8 @@ public class MyClass
          }
        
 
+    
+}
  
 //-----------------------------------------//
     }
